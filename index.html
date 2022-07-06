@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>同理訓練課程投影片 beta</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/simple.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+
+
+<style type= "text/css">
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+
+.reveal {
+    font-family: Noto Sans TC, Noto Sans;
+}
+.reveal p {
+    text-align: left;
+    font-family: Noto Sans TC, Noto Sans;
+}
+.reveal ul {
+    display: block;
+}
+.reveal ol {
+    display: block;
+}
+.reveal h3 {
+    text-align: left;
+    font-family: Noto Sans TC, Noto Sans;
+}
+.reveal section img {
+    border: none;
+    box-shadow: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.example p {
+    font-size: 2vh;
+    text-align: left;
+    margin: 2px 2px 2px 2px;    
+}
+</style>
+
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+# 治療師該如何同理病人？
+## 基於認知架構的同理原則與方法練習
+
+
+<p style="text-align:center;"><br></br>朱玉正 國立臺灣大學職能治療學系</p>
+
+<div class="reset-margin" style="font-size: large; position: absolute; left: 0px; top: 837px; height: 63px; min-height: 63px; width: 800px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+version:202207
+
+background: <https://tailoredmarketing.com/empathy-marketing-2></https> </div>
+</script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+
+
+### 課程概念
+
+<div class="callout callout-color1">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-clipboard-list" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+瞭解如何同理他人的原則、養成同理行為的習慣、營造幫助同理的情境
+
+</div>
+</div>
+<div class="callout-content">
+
+
+
+- 瞭解同理的益處與重要性
+
+- 知道同理線索常見的發生情境
+
+- 練習相關的同理溝通技巧與原則
+
+- 瞭解同理過程常見的困難
+
+- 如何減少干擾同理行為的因素
+
+</div>
+</div>
+
+
+
+<aside class="notes"><p>這個課程的設計概念是透過人類行為的學習與養成習慣，讓學員們知道常見的情境可以進行相關的練習，讓同理相關的行為使用可以較為熟練。在有壓力的情況之下較能夠穩定地表達同理。此外，也給予相關知識知道如何減少會干擾同理行為的因素，以幫助同理行為穩定表現。</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 課程規畫
+
+| 堂次 | 時數  | 內容                            |
+| :- | :-- | :---------------------------- |
+| 1  | 1.5 | 課程設計概念、同理心相關知識與效果的介紹、原則與方法、作業 |
+| 2  | 0.5 | 方法練習與討論、作業討論、作業               |
+| 3  | 0.5 | 方法練習與討論、作業討論、作業               |
+
+<aside class="notes"><p>同理需要持續地進行練習，只有2週也許會怠惰，但實際要上幾週也許要再看看練習的情況</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-size="contain" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 課程大綱
+
+- 同理心相關知識介紹
+- 需要被同理的來源 & 同理的目的
+- 如何表達同理
+- 表達同理時常見的困難
+- 課堂練習
+  - 分組實例演練
+  - 迴饋與評估
+- 作業
+</script></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+## 同理心相關知識介紹
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.1" data-transition="zoom" data-transition-speed="slow" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 同理心包含多面向的能力（成份）
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 90px; height: 720px; min-height: 720px; width: 800px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" data-id="emp">
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --><font color="#67AAF9">認知同理</font>
+  - 理解他人的內在想法（或感受）
+  - 知道對方在想什麼以及為什麼會這麼想
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --><font color="#9C0D38">情感同理</font>
+  - 感受到他人的感受（情緒）
+  - 感同身受
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --><font color="#1B998B">行為同理</font>
+  - 基於認知、情感同理而進一步展現的行為
+  - 助人、利他、體貼、關懷…等行為
+</div>
+
+<aside class="notes"><p>同理心的定義雖然在不同的研究者或是不同的領域都有些許的差異。其中最常被提到的是認知、情感、行為這三個面向。
+認知同理指對於他人內在想法的理解，知道一個人在想什麼，為什麼會這麼想。這個有一點推理的成份在
+情感同理指的是能夠感受到他人的情緒狀態。例如看到他人感到難過時，自己也覺得難過；看到他人感到開心時，自己也覺得開心。
+不同的領域可能強調不同的面向，但不一定都包含這三個面向。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.1" data-auto-animate="true" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 醫療域場當中的同理：
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 180px; height: 540px; min-height: 540px; width: 800px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+- **理解**病人的情況、觀點、感受
+- 與病人溝通所**理解**的情況並**確認**
+- 基於上述的**理解**給予幫助/治療
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 800px; top: 180px; height: 540px; min-height: 540px; width: 800px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" data-id="emp">
+
+
+- <font color="#67AAF9">認知同理</font>
+  - 理解他人的內在想法（或感受）
+  - 知道對方在想什麼以及為什麼會這麼想
+- <font color="#9C0D38">~~情感同理~~</font>
+  - ~~感受到他人的感受（情緒）~~
+  - ~~感同身受~~
+- <font color="#1B998B">行為同理</font>
+  - 基於認知、情感同理而進一步展現的行為
+  - 助人、利他、體貼、關懷…等行為
+
+</div>
+
+
+
+<div class="fragment has-light-background reset-margin" style="background-color: rgba(255, 255, 153, 0.6); position: absolute; left: 320px; top: 765px; height: 90px; min-height: 90px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+強調**認知上**的理解以及基於理解給予的**同理行為**
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 960px; top: 828px; height: 72px; min-height: 72px; width: 640px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" align ="right">
+
+<font size = "4px">(Mercer & Reynolds, 2002) </font>
+</div>
+
+<aside class="notes"><p>Hojat (2016)書中提出在醫療的過程，最主要的是認知上的理解，能否感受到情感其實不一定那麼重要，甚至可能會妨礙治療的判斷。
+但是情緒在同理行為當中是扮演一個相當重要的角色，之後會再提到它的重要性。但在Hojat他們提到的領域，應該是醫生為主而非是職能治療師的情境。在職能治療的情境當中，和病人相處的治療過程一次至少也需要30分鐘，和病人有許多的互動，這個互動的過程會有非常多的交流，不能把情緒完全排除在外。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-size="160%" data-background-position="right" data-auto-animate="true" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 病人感受到被是否被治療者同理的主要來源
+
+**關係導向行為 > 治療師情感涉入** <font style = "font-size: small;">（Hall et al., 2021）</font> 
+
+- 想的或是說的是否有被理解
+  - 說的話有沒有被仔細聆聽
+  - 說的話有沒有被聽進去
+  - 想法是否有被理解（但病人自己不一定有說出來，或是說得清楚）
+- 治療師是否有替病人想
+  - 治療時相關的決策過程考量病人的需求
+- 治療的過程理解病人的困難
+  - 身體 ＆ 心理的困難
+
+<div class="fragment has-light-background reset-margin" style="background-color: rgba(255, 255, 153, 0.6); position: absolute; left: 320px; top: 810px; height: 90px; min-height: 90px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+治療師是否有理解、關心病人
+</div>
+
+<aside class="notes"><p>關係導向行為指的就是下面那些，是否有聆聽、為病人想。根據Hall他們的查，病人覺得自己是否有被同理，和關係導向行為比較有關係，比較不需要治療師聽到病人的情況就和病人一樣感受到那些不安和痛苦…</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 同理心在醫療場域的價值與效果
+
+<div class="callout callout-color1">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-info-circle" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+Info
+
+</div>
+</div>
+<div class="callout-content">
+
+
+
+- 減少醫病雙方的誤會、衝突，有助後續溝通
+
+- 幫助治療師理解病人的需求
+
+- 降低病人情緒困擾帶來的干擾
+
+- 幫助病人理解治療相關訊息
+
+- 增加病人滿意度
+
+</div>
+</div>
+
+
+
+<aside class="notes"><p>同理帶來的效果並非是直接影響病人的健康或是治療成效。但是透過同理可以幫助雙方溝通，有助於治療的進展，也有助於雙方找到可能最適合病人情況的治療方法。同時，職能治療的病人有許多人是面對突然而來的疾病或是意外，心理上有可能還沒有調適過來，容易有許多的情緒出現，讓病人不願意配合某些治療或是對於治療的態度消極。治療師的同理也可以讓病人感到安心，有助於整體健康的恢復。病人感覺被同理可以讓治療比較順利的進行，<strong>可能</strong>提升治療效果</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+## 人什麼時候需要被同理？<br></br>什麼時候需要同理他人？
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-auto-animate="true" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 人的主動認知系統
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="course materials/slidesvg/enticipation model.svg" alt="" ></img></p>
+
+
+<aside class="notes"><p>人類與外在世界的互動並非是被動的，而是從自己的立場或是角度出發，用自己的「眼鏡」去看世界，同時也預期著世界要如何回應自己。自己的立場或是角度是會受到自己的知識 以及預期所影響。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-auto-animate="true" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 感到不被同理通常是需求、期望未被<font color = "blue">理解或是滿足</font>
+
+<split even>
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="course materials/slidesvg/enticipation model.svg" alt="" ></img></p>
+
+
+- 得到的回應與期望的不相符
+- 需求或想法不被理解
+- 雙方的預期有所落差，且在互相溝通的過程中沒辦法達到共識
+
+</split>
+
+<aside class="notes"><p>當自己的需求或是期望不被理解，又或者期望或是需求與實際上接收到的回應不同時，就會產生落差，而有相對應的情緒反應出現，需要被同理。在同理當中所強調的理解，就是要能夠知道對方的預期、立場是什麼，能夠理解為什麼對方會這麼想，為什麼會有這種反應。</p>
+<p>個人的情況：自己的預期與收到的回應不相符
+兩個人以上的情況：雙方的預期有所落差，且在互相溝通的過程中沒辦法達到共識</p>
+</aside></script></section></section><section  data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+## 同理的目的：相互理解
+
+- 治療師理解病人的立場、觀點、預期
+- 幫助病人理解訊息或是處置
+- 幫助病人建立較符合現實的預期（建立共同的世界觀）
+  - 正確掌握對方的狀態，並與之溝通，了解彼此的立場
+- 由同理帶到問題的解決（不一定會走到這一步）<!-- .element: style="color: #67AAF9" -->
+  - 了解問題
+  - 設定目標
+  - 討論因應
+
+<div class="fragment has-light-background reset-margin" style="background-color: rgba(255, 255, 153, 0.6); position: absolute; left: 160px; top: 720px; height: 180px; min-height: 180px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+幫助彼此相互理解是同理主要的目的
+</div>
+
+<aside class="notes"><p>同理的主要目的是要理解彼此，把握這個原則，盡量理解病人，同時也讓病人可以理解治療進行過程中的處置方法。同理並非要是體貼、或是其他讓病人感動到痛哭流涕的行為。在這堂課中主要把握「理解」這個原則來進行。
+有些時候某些問題是當下難以被解決的，但彼此理解對方為什麼會有這個問題，以及當下沒有辦法解決問題的困難所在，彼此比較能夠繼續不帶過度情緒地走下去。</p>
+</aside></script></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.2" data-background-size="contain" data-background-image="http://brewminate.com/wp-content/uploads/2017/01/Empathy14.jpg" -->
+
+## 同理是怎麼做到的？
+
+<div class="reset-margin" style="position: absolute; left: 960px; top: 837px; height: 63px; min-height: 63px; width: 640px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly" align="right">
+
+<font style="font-size:small">http://brewminate.com/wp-content/uploads/2017/01/Empathy14.jpg</font>
+</div>
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.1" data-transition="zoom" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+### 同理的歷程 
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="course materials/slidesvg/twopersons.svg" alt="" ></img></p>
+
+
+
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.1" data-transition="zoom" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+### 同理的歷程 
+雙方互動的動態歷程
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="course materials/slidesvg/twopersonsint.svg" alt="" ></img></p>
+
+
+<aside class="notes"><p>這邊所談論的同理都是兩個人之間的事情，在雙方互動的過程中從原本相互不理解最後有機會達到理解就是一個成功的同理歷程。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.1" data-transition="zoom" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+### 同理的歷程 
+
+<split left=2 right=3>
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="course materials/slidesvg/twopersonsint.svg" alt="" ></img></p>
+
+- 覺察同理訊息
+    - 從對方的語言內容、語氣、肢體行為覺察到對方需要同理的訊息
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->推論與理解
+    - 推論對方目前需要被同理的狀態是什麼
+    - 產生這個狀態可能的原因是什麼
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->同理行為展現
+    - 選擇要表現的同理行為
+    - 表現出來
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->覺察同理訊息的變化
+    - 對方的同理的訊息是否有所變化，其需要被同理的狀態是否持續存在
+    - 若未有改善可能是理解錯誤，需要重新推論；或是改變行為
+
+<aside class="notes"><p>同理的歷程從覺察同理的訊息開始，通常是從語言上的訊息，或是肢體的訊息感覺病人是否傳達出需要被同理的訊息。接著治療師需要推理「為什麼」對方現在會有這樣子的想法或是感受。進而表現出適當的同理行為，傳達對對方的理解，或是做出適當的行為幫助對方解決造成目前狀態的困難或是問題。當然，我們總是有理解或是推論錯誤的可能，所以在行為之後，需要從對方接下來後續的反應判斷做出來的同理行為是否讓對方感受到被同理或是問題有被解決，藉以調整自己的行為模式。如果自己的推論錯誤，會錯了意，也好馬上彌補錯誤，以免讓誤解更加擴大。</p>
+<p>簡單的例子，對方目前表現出對於自己的身體健康狀態很擔憂的情況，直接口頭說出來。根據應答，你推論應該是因為身體行動不便讓自己很灰心，你考慮要如何回應。有簡單的，和複雜的。簡單的只是點出對方目前的狀態並表示自己理解現在這樣子的狀態。比較複雜的可能就要說明自己推論的整個過程向對方確認，其現在的狀態其實包含了許多層面的擔憂在裡頭。有可能對方目前擔憂並非單純只是基於對身體狀況的不樂觀，而是更進一步覺得自己需要家人的長期陪伴，讓對方感到自己拖累了家人，這才是目前情緒狀態不佳的主因。這時因為問題從原來的身體狀態轉變為自己對於自己身體狀況的看法，需要解決的問題不同，行為也應該有所調整，才有辦法解決對方的問題。例如本來會要盡快治療對方的身體，後來可能需要先幫助他們找到其他的照護資源。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.2" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 同理行為的歷程可能影響因素
+
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="course materials/slidesvg/empathy model.svg" alt="" height="800"></img></p>
+
+
+<aside class="notes"><p>知識、經驗、情緒覺察能力都影響了個體是否能夠捕捉到對方所傳達出來的同理訊息。同時，知識與經驗也影響了同理者是否可以第一時間理解或是感同身受對方當下的狀態。若有相同的經驗或是類似的經驗時，較可以快速地理解或是感同身受。
+to be continue...</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.1" data-auto-animate="true" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 同理行為的歷程可能影響因素
+
+<split even>
+
+- 你不一定可以控制的
+  - 病人的特質
+  - 工作環境與壓力
+  - 組織的支持
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="course materials/slidesvg/empathy model.svg" alt="" ></img></p>
+
+
+- （某種程度）你可以控制的
+  - 覺察同理線索的能力
+    - 相關的知識與經驗
+  - 同理行為方式 <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+  - 同理對方的動機 <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+    - 與被同理者的關係
+    - 信念
+  - 同理行為需要花費的成本 <!-- .element: class="fragment highlight-red" data-fragment-index="1" -->
+
+</split>
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 人類的行為模式
+
+<split even gap = "1">
+
+<div class="callout callout-color1">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-info-circle" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+系統一（直覺式）
+
+</div>
+</div>
+<div class="callout-content">
+
+（預設行為模式）
+
+
+
+- 快速
+
+- 不耗腦力
+
+- 基於習慣、本能
+
+</div>
+</div>
+
+<div class="callout callout-color1">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-info-circle" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+系統二（深思式）
+
+</div>
+</div>
+<div class="callout-content">
+
+（需要花心力才會介入）
+
+
+
+- 較慢
+
+- 需要耗腦力
+
+- 基於抽象、複雜思考
+
+</div>
+</div>
+
+</split>
+
+<div class="has-light-background reset-margin" style="background-color: rgba(255, 255, 153, 0.6); position: absolute; left: 160px; top: 630px; height: 270px; min-height: 270px; width: 1280px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+- 在腦力不足、有壓力的情況下人們通常是用習慣來反應的，不利同理心的表現！
+- 情緒是雙面刃，可能增進 / 抑制同理行為產生的動機 
+
+</div>
+
+<aside class="notes"><p>人們在生活中，大部份的情況下都是按照習慣、自動化反應來做事的。因為人的大腦是懶惰的，可以不動腦就盡量不動腦。而同理的歷程涉及了同理線索的辨識、他人心理狀態的理解與推論，這些都是非常複雜需要消耗腦力的事情。雖然有人認為人們對於情緒狀態的捕捉以及感受是相當自動化的，但是同理的歷程並非單純只是情緒的感同身受（情緒同理），在醫療的場域認知以及行為上的同理是相對更重要的，而這兩個部份都不是只靠著本能或是直覺就可以完成的事情。</p>
+<p>腦力不足、有壓力的情況很常發生在剛開始接觸病人的緊張實習生、或是對於狀況不太熟悉的治療師，都容易用習慣來進行反應。另一方面，前面提到的情緒是一個重要的影響因子。若治療師可以感同身受病人的痛苦，容易讓治療師較願意進行同理的行為，或是較願意幫助這位病人；相反地，若這位病人的感受治療師無法理解或是感受，就比較不容易引發幫助他的動機。更甚者，若病人的行為讓人覺得厭惡，治療師反而有可能對病人更冷漠，不想要幫助它。</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background" data-background-color="#d1d1d1" -->
+
+## 表達同理常見的困難 <i class="far fa-hand-point-down"></i>
+
+- 無法辨識/接收到需要被同理的訊息
+- 對於接收到的訊息錯誤的解讀
+- 不知道該如何給予反應
+- 否定對方的狀態
+- 沒有足夠的時間或認知資源處理同理訊息或是妥善反應
+  - 時間壓力、工作壓力
+- 沒有給予清楚的說明（讓對方無法有正確的預期）
+- 自己陷入情緒之中 <!-- .element: class="fragment" data-fragment-index="1" -->
+  - 與家人、朋友相處的情境當中最常遇到的困難
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="@work stuff/empathy training course/yieldatcat.png" alt="" class="fragment" data-fragment-index="1"></img></p>
+
+
+<aside class="notes"><p>人們沒有同理不一定是沒有接收到對方需要同理的訊息，而是在接收到訊息之後反應不適當而讓對方覺得沒有被同理到。沒有接收到訊息處是比較少的情況，大部份的情況是錯誤的解讀或是因為治療的時間壓力、治療的習慣而沒有適當的同理表現。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background" data-background-color="#d1d1d1" -->
+### 無法辨識/接收到需要被同理的訊息
+
+
+
+<iframe
+        width=1500
+        height=800
+        src="course materials/course content/aware problem.pdf"></iframe>
+
+<aside class="notes"><p>忽略了病人的需求，同時預設了病人會騎很快。雖然病人實際上的確身體狀況可能不適合騎車，但可以先瞭解其需要騎車的原因，並且給予適當的預期。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+### 對於接收到的訊息錯誤的解讀
+
+
+
+<iframe
+        width=1500
+        height=800
+        src="course materials/course content/misunderstand problem.pdf"></iframe>
+
+<aside class="notes"><p>病人對於自己的身體狀態不太有信心，也認為治療師沒有足夠的力氣可以拉住他不讓他受傷</p>
+</aside></script></section><section data-markdown><script type="text/template">
+
+### 不知道該如何給予反應
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 80px; top: 90px; height: 810px; min-height: 810px; width: 1440px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+P：我想說F大是新醫院，後來又想不對，因為F大是就我們家最近的啊，我就先到F大去掛急診。
+
+T：真的啊。
+
+P：然後他也給我做一些檢查做完了，我看他後來沒有做什麼，我自己也擔心，也不曉得，我認為，因為任何剛開始自己認為說這是小事情，他叫我住院，我本來是不想住院的，後來他寫一個切結書，你要自動放棄治療啊什麼的，後來我走了，本來想說我原來在我們醫院有做，因為我也是有慢性病，三高啊。
+
+T：是是是，對對對。
+
+P：保持都有在我們醫院做治療。
+
+T：基本的，對對對。
+
+P：門診都有啦，然後我就直接計程車坐過來T大，我想說還是我們T大醫院比較設備啊、醫師各方面都很健全都很精良。
+
+T：好，沒問題。
+
+P：我認為是這樣走的是對的，我在那邊，不知道變成怎麼樣，我自己也不知道啊，很難講嘛。
+
+T：好好。
+
+P：所以那有進步，想說我的決定是對的。
+
+T：對啊，也是因為你自己很積極啦，對啊，我們就是互相配合，對啊對啊。
+
+P：也需要這樣，但是醫療上如果說他有給你怠慢啊，或者是有一些疏失，或者是他設備不夠的話，可能也是會有影響。
+
+T：OK。
+
+P：因為T大我們設備應該算是最好的對不對？
+
+</div>
+
+<!-- .slide: class="drop" -->
+</script></section><section data-markdown><script type="text/template">
+
+### 否定對方的狀態
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 80px; top: 90px; height: 810px; min-height: 810px; width: 1440px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+P：走了一了了之了，這樣最好了，不要再耽誤這些年輕人，讓晚輩這樣……（台語）。
+
+T：不會，不是說家有一老如有一寶嗎？
+
+</div>
+
+<!-- .slide: class="drop" -->
+</script></section><section data-markdown><script type="text/template">
+
+### 沒有足夠的時間或認知資源處理同理訊息或是妥善反應
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 80px; top: 90px; height: 810px; min-height: 810px; width: 1440px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+C：老師請問一下，就是剛剛評估了之後，我們就以下盤的部份有沒有，你有沒有覺得哪裡是有動能回來？是否是膝蓋這一節長，是有，或者是區域你覺得，或者是髖關節的可動，你覺得。
+
+T：現在還沒辦法有結論。
+
+C：您摸得時候沒有很明顯的感覺是嗎？
+
+T：他這邊以上是很清楚的。
+
+C：我講的下盤。
+
+T：下盤是比較沒有感覺，下肢。
+
+C：因為術後的時候是，醫師就懷疑說他兩邊的髖關節是有動能回來，當時啦，在神外剛開完脊隨
+手術前胸換骨抒壓的手術完的時候，然後突然評估，動一動左腳右腳都很明顯那時候。
+
+T：嗯。
+
+C：後面感染一躺就躺一個半月。
+
+T：哦，因為感染。
+
+C：就退掉，對，感染又回去，院內的AB菌，不是AB桿菌哦，對，病毒的那個AB菌跟肺炎這樣。
+
+T：所以覺得有退化到是嗎？
+
+C：我是覺得有，因為那時候他來都會把棉被掀開來，然後說，欸石OO，來，腳動一動，他就做動作。
+
+T：他剛剛也有動一點點，右腳的確…嗯，左腳的確是比較好一點。
+
+C：**並不是每次有，可是或許有，所以我們可以做誘導還是什麼這樣，課後的話。**
+
+T：**那明天再討論。**
+
+C：**好啊，我剛回來，所以我比較急，我想要了解。謝謝老師，這樣我清楚了。**
+
+</div>
+
+<!-- .slide: class="drop" -->
+</script></section><section data-markdown><script type="text/template">
+### 自己陷入情緒之中
+
+- 與家人、朋友相處的情境當中最常遇到的困難
+</script></section><section data-markdown><script type="text/template">
+### 沒有給予清楚的說明
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+T：那我等一下會碰你下面，碰你這邊一下，然後你要跟我講說是尖的還是鈍的？
+
+P：嗯。
+
+T：好，然後這樣是尖的還是鈍的？
+
+P：這樣子好像是？
+
+T：我再碰一次哦。
+
+P：鈍的。
+
+…
+
+……測驗完成後……
+
+…
+
+T：好，伯伯你腳踝這邊可以稍微上一點嗎？
+
+P：哪裡腳踝？
+
+T：腳踝可以稍微動嗎？可以嗎？好，那你等一下幫我腳掌這樣子勾起來，就這樣子幫我勾起來，然後我會往下壓你的腳，然後你要盡量不要被我壓下去。
+
+P：好。
+
+</div>
+
+<!-- .slide: class="drop" -->
+</script></section></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+## 如何同理他人？
+
+<split left=3 right=2>
+
+- 覺察同理線索
+    - 常見的同理情境
+- 選擇與表達適當的同理行為
+    - 同理行為的原則
+    - 同理的溝通方法
+
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="course materials/slidesvg/empathy model.svg" alt="" ></img></p>
+
+
+</split></script></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+## 病人需要被同理情境的線索
+
+- 身體狀態
+  - 病情退步/恢復進度不如預期
+  - 當下身體狀態無法順利進行治療
+  - 病況進步
+- 情緒相關
+  - 感到沒有希望或絕望
+  - 感到沒有信心或做不到
+  - 流露負向情緒
+- 想法相關
+  - 與治療師有認知落差
+  - 表達期望
+
+<div class="fragment has-light-background reset-margin" style="background-color: rgba(255, 255, 153, 0.6); position: absolute; left: 160px; top: 630px; height: 270px; min-height: 270px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+此為可能遭遇的情境外顯行為分類，但造成的原因需要進一步理解
+</div>
+
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+## 病人需要被同理情境的線索
+
+<iframe 
+        height=800
+        width=1500
+        src="course materials/course content/empathy context 20220131.pdf"></iframe>
+
+
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-transition="zoom" data-transition-speed="slow" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 同理的行為原則 1
+
+<split even gap = "1">
+<div class="callout callout-color5">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-exclamation-triangle" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+接收訊息：真誠理解對方
+
+</div>
+</div>
+<div class="callout-content">
+
+
+
+- 專注當下的互動
+
+- 仔細聆聽，少批評
+
+- <font color = "blue">正確地</font>理解對方的訊息
+
+</div>
+</div>
+
+<div class="callout callout-color2">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-fire-alt" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+行為：先處理情緒再解決問題
+
+</div>
+</div>
+<div class="callout-content">
+
+
+
+- 情緒會干擾其他的動作，先安撫情緒
+
+- 表達理解或有理解的意願
+
+- 與對方同在
+
+</div>
+</div>
+
+</split>
+
+<div class="has-light-background reset-margin" style="background-color: rgba(255, 255, 153, 0.6); position: absolute; left: 160px; top: 630px; height: 180px; min-height: 180px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+同理並不一定會解決問題，但要明白發生了什麼問題
+</div>
+
+<aside class="notes"><p>在進行同理的過程，一個原則就是真誠理解。當你真心想要去理解對方為什麼會這麼想，為什麼會有這種感覺時，行為大致上會是合適的，會專注在當下與對方的互動上，會仔細地聆聽對方，會想要追問更多的情況以可以正確地理解對方的情況，而不是聽一半就妄下判斷，甚至給予批評。雙方是平等，並非是上對下的。</p>
+<p>有些時候同理情境發生時對方可能伴隨著高強度的情緒，這時候需要先讓這個情緒緩下來，才有辦法進一步去詢問到底發生了什麼事情或是進一步討論要怎麼解決問題。</p>
+</aside></script></section></section><section  data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 同理的行為原則 2
+
+<split even gap = "1">
+
+<div class="callout callout-color2">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-fire-alt" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+要做到
+
+</div>
+</div>
+<div class="callout-content">
+
+
+
+- 維持自身認知資源與能量
+
+- 專注當下的互動
+
+- 傾聽（多聽）
+
+- 盡力理解
+
+- 真誠關懷
+
+- 肯定對方的努力
+
+- 先處理情緒再解決問題
+
+</div>
+</div>
+
+<div class="callout callout-color5">
+<div class="callout-title">
+<div class="callout-icon">
+
+<i class="fas fa-exclamation-triangle" ></i>
+
+</div>
+<div class="callout-title-inner">
+
+不要做
+
+</div>
+</div>
+<div class="callout-content">
+
+
+
+- 對行為/想法的原因妄下判斷
+
+- 否定、批評對方的想法與作為
+
+- 忽略對方的需求
+
+- 強迫要求對方接受建議或是意見
+
+</div>
+</div>
+
+</split>
+</script></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+## 幫助理解他人的溝通方法
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 幫助理解他人的溝通方法 (1)
+
+- 專注 & 傾聽
+  - 眼神、姿勢、適當回應
+  - 避免令人分心的行為
+- 重述與確認（問題或需求）
+  - 確認接收到的訊息是否正確，這是消除錯誤預期的機會
+  - 「我確認一下，剛才你說…」
+- 開放式問句探究
+  - 問題本身也可能帶有價值判斷
+  - 採用假設或是確認的語氣，不要先入為主武斷推論
+  - 「你的意思是…？」、「你覺得…怎麼樣？」
+  - <font color = "red">**不要**</font>用「為什麼你要…」、「為什麼不要…」
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 幫助理解他人的溝通方法(2)
+
+- 情感反映
+  - 忠實反映對方的情緒，不加以評價、推論或解釋
+  - 用以傳達理解與接納，也協助對方覺察這個情緒經驗
+  - 「因為…讓你覺得…？」、「你感覺…因為…？」、「是不是…？」
+- 贊同與肯定
+  - 增強對方的有利行為，要使對方了解是因為什麼行為受到肯定
+  - 提升其動機以及信心，以增進溝通意願
+  - 「你願意__，這實在很不容易！」
+
+<aside class="notes"><p>情感反映並不是單純只有點出對方的情緒，同時要傳達背後可能的原因的推論與理解。但是因為有推理的成分在，不宜使用過度武斷的語氣，有可能有錯誤的推論。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 幫助理解他人的溝通方法(3)
+
+- 有效的傳遞醫療訊息
+  - 第二步消除不安或是擔憂（第一步先以其他方法確認並表達理解對方的不安或是擔憂）
+  - 用對方聽得懂的語言
+- 說明決策過程
+  - 讓病人知道要做什麼以及為什麼要這麼做
+  - 若有不同的選擇可以從病人的角度做選擇
+</script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: data-background-opacity="0.3" data-background-size="300%" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+## 臨床常見的同理實例
+
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-position="90% 10%" data-background-size="32px 32px" data-background-image="@work stuff/empathy training course/magnifier.png" -->
+
+### 實例：主訴訪談
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<p class="r-fit-text">P : 覺得只是說自己已經變成一個廢人一樣，只能夠這樣子茍延殘喘，就是活到50，再活10年，20年還是這樣子。</p>
+
+T：嗯。
+
+<p class="r-fit-text">P：常常就是到醫院來，掛個急診，去醫院化療，每天都做這樣的事情，一痛起來不得了，爬山也不能爬。</p>
+
+T：原本喜歡爬山。
+
+P：出去也不能出去，家在三樓，想下去也不太可能。
+
+T：嗯，就感覺失去了好多東西，對不對？
+
+P：對。
+
+T：嗯，然後以前可以做的事情，現在突然就做不到了。
+
+P：對。
+
+T：對呀，這確實是令人覺得很難受，對不對？
+
+P：嗯。
+
+T：很突然的失去，對。
+
+P：這是我現在最痛苦的。
+
+T：嗯。而且每天其實在這邊也很辛苦，對不對？還有好多要做的治療什麼的。
+
+</div>
+
+<aside class="notes"><p>找出來，需要同理的線索？病人會有這種想法（或感覺）的原因是什麼？這裡的治療師是怎麼回應的？ 如果是你，你會怎麼回應？ 這裡病人明白地表露了生病的心理有多痛苦。回應時，治療師簡單地以「這確實是令人覺得很難受」表達了對於病人目前心境的理解。不過也可以更進一步，點出原因以及現在的狀態並向對方確認。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-position="90% 10%" data-background-size="32px 32px" data-background-image="@work stuff/empathy training course/magnifier.png" -->
+
+### 實例：主訴訪談
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+<p class="r-fit-text">P：因為在開刀以後，就是腳沒力了，現在整個功能看起來，我是覺得不是很靈活了。</p>
+
+T：嗯。
+
+P：但是該有的應該，像你們這樣子動，大概都沒什麼問題。
+
+T：嗯，你剛剛提到你說能活嗎？
+
+P：對呀。我能活嗎？
+
+T：醫生有跟你聊過這件事嗎？
+
+P：沒有。
+
+T：沒有，但是你自己會有一些想法就對了。
+
+<p class="r-fit-text">P：對。一個8月份，9月份還能跑著跳的，現在才兩個月，幾乎都不能動了。</p>
+
+T：嗯。
+
+P：好恐怖。
+
+T：確實讓人覺得很害怕，你也覺得很難過，對不對？
+
+P：嗯。
+
+T：嗯。就是太突然了，對嗎？
+
+P：對，對我來講。
+
+T：也讓人覺得很難接受。
+
+</div>
+
+<aside class="notes"><p>找出來，需要同理的線索？病人會有這種想法（或感覺）的原因是什麼？這裡的治療師是怎麼回應的？ 如果是你，你會怎麼回應？ 如果用別的方法回應，可以怎麼回應？</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-position="90% 10%" data-background-size="32px 32px" data-background-image="@work stuff/empathy training course/magnifier.png" -->
+
+### 實例：神經運動功能評估或訪談
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 80px; top: 90px; height: 810px; min-height: 810px; width: 1440px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+T：好，那我們慢慢的躺下來，這樣腳放下來，好，翻身看看。
+
+P：這樣，這樣很難，比較不會翻那邊。
+
+T：比較不會翻那邊？好，那那我們，那我們移往裡面一點點，然後我們搬出來。好，自己翻身出
+來看看。OK，好。那……。
+
+P：就是自己住院了。又退化了，沒有。
+
+T：是哦？
+
+P：沒有練習。
+
+T：所以你現在翻一下這樣子會覺得累嗎？躺一下翻一下。
+
+P：躺一下？
+
+T：就剛剛這樣。
+
+P：有一點，有一點累。
+
+T：有一點累，那你現在要停，停一下嗎？休息一下嗎？還是我們就坐起來？
+
+P：坐起來。
+
+</div>
+
+<aside class="notes"><p>找出來，需要同理的線索？病人會有這種想法（或感覺）的原因是什麼？這裡的治療師是怎麼回應的？ 如果是你，你會怎麼回應？ 如果用別的方法回應，可以怎麼回應？</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-position="90% 10%" data-background-size="32px 32px" data-background-image="@work stuff/empathy training course/magnifier.png" -->
+
+### 實例：目標與計畫討論
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 80px; top: 90px; height: 810px; min-height: 810px; width: 1440px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+T：叔叔，我們可以繼續來探索一下有沒有什麼興趣，對，雖然現在會比較容易累一點，但是其實我們可以慢慢找找看還有什麼，還是叔叔你會喜歡寫書法嗎？
+
+P：沒有什麼特殊的嗜好了。
+
+T：那可能就都不排斥。
+
+P：對。
+
+T：哦，了解，好。
+
+P：以前沒生病前，就偶爾走走路這樣的，現在什麼都不行，以前就是常常出去走走路，走走路，現在也不行了。在家裡看看電視。
+
+T：了解。那叔叔你有去過醫院的中庭嗎？
+
+P：啊？
+
+T：你有去過醫院的中庭嗎？
+
+P：醫院的什麼？
+
+T：中庭花園，有一個小花園。
+
+P：沒有。
+
+T：沒有，那邊其實可以推輪椅，稍微去逛一下。對。
+
+P：不要。
+
+T：不要？
+
+P：太…
+
+T：沒關係，叔叔，我們之後再來想一想。
+
+</div>
+
+<aside class="notes"><p>找出來，需要同理的線索？病人會有這種想法（或感覺）的原因是什麼？這裡的治療師是怎麼回應的？ 如果是你，你會怎麼回應？ 如果用別的方法回應，可以怎麼回應？</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+
+<!-- .slide: data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+## 課堂練習
+
+- 分組進行（3人或是2人一組）
+- 輪流扮演同理者與被同理者（若3人則一人觀察）
+- 分享自己的答案
+- 給予彼此迴饋（可以使用目前柔潔設計中的病人是否感到同理的問卷）
+- 找到適合自己的方式
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 課堂練習一
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+P：好。主要是我好奇是我怎麼知道我可不可以騎摩托車？還是從騎腳踏車開始，回去的時候？
+
+T：但現在的平衡，我覺得可能還要再練一下下。
+
+P：好。我是說回去想要騎摩托車，先從騎腳踏車開始練習，小台的。
+
+</div>
+
+<div class="has-light-background reset-margin" style="font-size: 3vh; background-color: rgba(137, 171, 251, 0.3); position: absolute; left: 976px; top: 90px; height: 360px; min-height: 360px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-around" >
+
+
+- 你會怎麼回應（10秒內）
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->同理的線索為何？
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->這個方法是否符合同理行為的原則？
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->哪些方法適合用在這個情境？
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->使用這些方法可以怎麼回應？
+
+</div>
+
+<div class="fragment reset-margin" style="font-size: 2vh; position: absolute; left: 992px; top: 450px; height: 450px; min-height: 450px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+|    方法   |           |
+| :-----: | :-------: |
+|  專注與傾聽  |   重述與確認   |
+| 開放式問句探究 |    情感反映   |
+|  贊同與肯定  | 有效的傳遞醫療訊息 |
+|  說明決策過程 |           |
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 課堂練習二
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+P：因為F大是就我們家最近的啊，我就先到F大去掛急診。然後他也給我做一些檢查做完了，我看他後來沒有做什麼，我自己也擔心，也不曉得，我認為，因為任何剛開始自己認為說這是小事情，他叫我住院，我本來是不想住院的，後來他寫一個切結書，你要自動放棄治療啊什麼的，後來我走了，本來想說我原來在我們醫院有做，因為我也是有慢性病，三高啊。然後我就直接計程車坐過來T大，我想說還是我們T大醫院比較設備啊、醫師各方面都很健全都很精良。我認為是這樣走的是對的，我在那邊，不知道變成怎麼樣，我自己也不知道啊，很難講嘛。
+
+</div>
+
+<div class="has-light-background reset-margin" style="font-size: 3vh; background-color: rgba(137, 171, 251, 0.3); position: absolute; left: 976px; top: 90px; height: 360px; min-height: 360px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-around" >
+
+
+- 你會怎麼回應（10秒內）
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->同理的線索為何？
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->這個方法是否符合同理行為的原則？
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->哪些方法適合用在這個情境？
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->使用這些方法可以怎麼回應？
+
+</div>
+
+<div class="fragment reset-margin" style="font-size: 2vh; position: absolute; left: 992px; top: 450px; height: 450px; min-height: 450px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+|    方法   |           |
+| :-----: | :-------: |
+|  專注與傾聽  |   重述與確認   |
+| 開放式問句探究 |    情感反映   |
+|  贊同與肯定  | 有效的傳遞醫療訊息 |
+|  說明決策過程 |           |
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 課堂練習三
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+P：我真想走了一了了之了，這樣最好了，不要再耽誤這些年輕人，讓晚輩這樣……（台語）。
+
+</div>
+
+<div class="has-light-background reset-margin" style="font-size: 3vh; background-color: rgba(137, 171, 251, 0.3); position: absolute; left: 976px; top: 90px; height: 360px; min-height: 360px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-around" >
+
+
+- 你會怎麼回應（10秒內）
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->同理的線索為何？
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->這個方法是否符合同理行為的原則？
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->哪些方法適合用在這個情境？
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->使用這些方法可以怎麼回應？
+
+</div>
+
+<div class="fragment reset-margin" style="font-size: 2vh; position: absolute; left: 992px; top: 450px; height: 450px; min-height: 450px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+|    方法   |           |
+| :-----: | :-------: |
+|  專注與傾聽  |   重述與確認   |
+| 開放式問句探究 |    情感反映   |
+|  贊同與肯定  | 有效的傳遞醫療訊息 |
+|  說明決策過程 |           |
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 課堂練習四
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+P：對呀。我能活嗎？
+
+T：醫生有跟你聊過這件事嗎？
+
+P：沒有。
+
+T：沒有，但是你自己會有一些想法就對了。
+
+P：對。一個8月份，9月份還能跑著跳的，現在才兩個月，幾乎都不能動了。
+
+</div>
+
+<div class="has-light-background reset-margin" style="font-size: 3vh; background-color: rgba(137, 171, 251, 0.3); position: absolute; left: 976px; top: 90px; height: 360px; min-height: 360px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-around" >
+
+
+- 你會怎麼回應（10秒內）
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->同理的線索為何？
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->這個方法是否符合同理行為的原則？
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->哪些方法適合用在這個情境？
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->使用這些方法可以怎麼回應？
+
+</div>
+
+<div class="fragment reset-margin" style="font-size: 2vh; position: absolute; left: 992px; top: 450px; height: 450px; min-height: 450px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+|    方法   |           |
+| :-----: | :-------: |
+|  專注與傾聽  |   重述與確認   |
+| 開放式問句探究 |    情感反映   |
+|  贊同與肯定  | 有效的傳遞醫療訊息 |
+|  說明決策過程 |           |
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 課堂練習五
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+T：你是之前有測過？
+
+P：我是老病人啦。所以我才會想說你怎麼會叫我抬到最高？一般測都不會抬到最高，一般都是平的跟這個而已。你等我一下，因為呢，我平衡不太好。你剛剛這樣子其實很危險，我等一下如果不小心我會整個翻下去，就很危險。你聽得懂我的意思嗎？
+
+</div>
+
+<div class="has-light-background reset-margin" style="font-size: 3vh; background-color: rgba(137, 171, 251, 0.3); position: absolute; left: 976px; top: 90px; height: 360px; min-height: 360px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-around" >
+
+
+- 你會怎麼回應（10秒內）
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->同理的線索為何？
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->這個方法是否符合同理行為的原則？
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->哪些方法適合用在這個情境？
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->使用這些方法可以怎麼回應？
+
+</div>
+
+<div class="fragment reset-margin" style="font-size: 2vh; position: absolute; left: 992px; top: 450px; height: 450px; min-height: 450px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+|    方法   |           |
+| :-----: | :-------: |
+|  專注與傾聽  |   重述與確認   |
+| 開放式問句探究 |    情感反映   |
+|  贊同與肯定  | 有效的傳遞醫療訊息 |
+|  說明決策過程 |           |
+
+</div>
+</script></section><section data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-image="https://tailoredmarketing.com/wp-content/uploads/2020/06/EmpathySMALL.jpg" -->
+
+### 課堂練習六
+
+<div class="example has-light-background reset-margin" style="background-color: white; border: solid; box-sizing: border-box; position: absolute; left: 0px; top: 90px; height: 810px; min-height: 810px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+T：你從家裡去那個上班的地方，大概有多遠？
+
+P：你說騎摩托車嗎？
+
+T：你是騎摩托車去是不是？
+
+P：對啊。
+
+T：騎摩托車去…
+
+P：因為我住...我在XXX，我在那個XX路那裡啊。
+
+T：所以那邊公車比較...不方便嗎？
+
+P：方便啊，可是我不喜歡坐。
+
+T：不喜歡坐公車。是...是因為會很晃嗎？
+
+P：不是啊。
+
+T：就只是…
+
+P：不喜歡走路去坐公車。我從以前我就習慣騎摩托車。
+
+（如何讓病人願意使用比較符合身體狀況的移動方式？）
+
+</div>
+
+<div class="has-light-background reset-margin" style="font-size: 3vh; background-color: rgba(137, 171, 251, 0.3); position: absolute; left: 976px; top: 90px; height: 360px; min-height: 360px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-around" >
+
+
+- 你會怎麼回應（10秒內）
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->同理的線索為何？
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->這個方法是否符合同理行為的原則？
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->哪些方法適合用在這個情境？
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->使用這些方法可以怎麼回應？
+
+</div>
+
+<div class="fragment reset-margin" style="font-size: 2vh; position: absolute; left: 992px; top: 450px; height: 450px; min-height: 450px; width: 608px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+|    方法   |           |
+| :-----: | :-------: |
+|  專注與傾聽  |   重述與確認   |
+| 開放式問句探究 |    情感反映   |
+|  贊同與肯定  | 有效的傳遞醫療訊息 |
+|  說明決策過程 |           |
+
+</div>
+
+
+</script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: class="has-dark-background drop" data-background-color="rgba(255,0,0,0.3)" -->
+
+<div class="reset-margin" style="position: absolute; left: 1120px; top: 9px; height: 90px; min-height: 90px; width: 160px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+<p style="line-height: 0" class="reset-paragraph image-paragraph"><img src="@work stuff/empathy training course/businessman.png" alt="" ></img></p>
+
+</div>
+
+### 作業：有效傳遞訊息練習
+
+- 預期對方的生活經驗與知識能力
+  - 不同的年紀
+  - 不同的教育程度
+- **試著用他人聽得懂的語言說明**
+
+<aside class="notes"><p>有效地傳遞醫療相關訊息也是消除病人不安以及給予建立正確地預期的方式，這個作業主要練習用對方可以聽得懂的話語來說明。作業發下去讓同學作文，若可以試著講給家中適合的他人聽聽看獲得回饋最好。否則就是回到課堂上大家互相討論。</p>
+</aside></script></section><section data-markdown><script type="text/template">
+#### 作業一
+
+<div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.6); transform: rotate(15deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.3); transform: rotate(7deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-light-background reset-margin" style="background-color: #f8f8f8; position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+- 職能治療師是什麼？可以幫助來治療室的病人做什麼？
+  1. 跟家中的長輩或是鄰居長輩說明
+  2. 分別假設對方是80歲、30歲、10歲的人要如何說明
+
+</div>
+
+<!-- .slide: class="drop" -->
+</script></section><section data-markdown><script type="text/template">
+#### 作業二
+
+<div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.6); transform: rotate(15deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.3); transform: rotate(7deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-light-background reset-margin" style="background-color: #f8f8f8; position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+- 使用尖鈍測驗測試病人的肢體觸覺時如何說明
+  1. 跟家中的長輩或是鄰居長輩說明
+  2. 分別假設對方是80歲、30歲、10歲的人要如何說明
+
+</div>
+
+<aside class="notes"><p>主要是和年紀、教育程度有關</p>
+<!-- .slide: class="drop" --></aside></script></section><section data-markdown><script type="text/template">
+#### 作業三
+
+<div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.6); transform: rotate(15deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.3); transform: rotate(7deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-light-background reset-margin" style="background-color: #f8f8f8; position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+- 接下來要測量你的肌張力
+  1. 跟家中的長輩或是鄰居長輩說明
+  2. 分別假設對方是80歲、30歲、10歲的人要如何說明
+
+</div>
+
+<aside class="notes"><!-- .slide: class="drop" --></aside></script></section><section data-markdown><script type="text/template">
+#### 作業四
+
+<div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.6); transform: rotate(15deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.3); transform: rotate(7deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-light-background reset-margin" style="background-color: #f8f8f8; position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+- 接下來要測量你的定向感
+  1. 跟家中的長輩或是鄰居長輩說明
+  2. 分別假設對方是80歲、30歲、10歲的人要如何說明
+
+</div>
+
+<aside class="notes"><!-- .slide: class="drop" --></aside></script></section><section data-markdown><script type="text/template">
+#### 作業五
+
+<div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.6); transform: rotate(15deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.3); transform: rotate(7deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-light-background reset-margin" style="background-color: #f8f8f8; position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+- 接下來要測量你的本體覺
+  1. 跟家中的長輩或是鄰居長輩說明
+  2. 分別假設對方是80歲、30歲、10歲的人要如何說明
+
+</div>
+
+<aside class="notes"><!-- .slide: class="drop" --></aside></script></section><section data-markdown><script type="text/template">
+#### 作業六
+
+<div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.6); transform: rotate(15deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-dark-background reset-margin" style="background-color: rgba(255,0,0,0.3); transform: rotate(7deg); position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div> <div class="has-light-background reset-margin" style="background-color: #f8f8f8; position: absolute; left: 160px; top: 90px; height: 720px; min-height: 720px; width: 1280px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+
+- 模仿測驗
+  1. 跟家中的長輩或是鄰居長輩說明
+  2. 分別假設對方是80歲、30歲、10歲的人要如何說明
+
+</div>
+
+<aside class="notes"><!-- .slide: class="drop" --></aside></script></section></section><section  data-markdown><script type="text/template">
+<!-- .slide: class="has-light-background" data-background-color="rgb(137, 171, 251)" -->
+
+### 作業：贊同與肯定的練習 <i color="pink" class="fa fa-solid fa-thumbs-up"></i>
+
+- 每天寫下3件因為<font style="color:blue;">別人的某些行為</font>而「讓你有正向情緒感受的事情」
+- 練習看到別人的努力
+
+<aside class="notes"><p>人們常會忽略他人的努力，需要一點練習才有辦法察覺</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+<!-- .slide: class="drop" data-background-opacity="0.1" data-background-size="80%" data-background-repeat="no-repeat" data-background-image="https://eng.cepsmn.org/wp-content/uploads/2019/11/empathy21.jpeg" -->
+
+## 同理是需要練習的
+
+## <br></br>同理的原則看似簡單<br></br>但實際上要做到有許多困難
+
+<div class="reset-margin" style="position: absolute; left: 1120px; top: 810px; height: 90px; min-height: 90px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" align ="right">
+
+<font style = "font-size:small">background: https://eng.cepsmn.org/</font>
+</div>
+
+
+
+
+
+
+
+
+</script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+	if(isLight(bgColor)){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+		  RevealChalkboard, 
+        ],
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1600,"height":900,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"showNotes":true,"transition":"convex","transitionSpeed":"fast","pdfSeparateFragments":false}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
